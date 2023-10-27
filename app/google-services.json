@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "191099426270",
+    "project_id": "addtilesfragment",
+    "storage_bucket": "addtilesfragment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191099426270:android:e39348ad60ef6b7318b94f",
+        "android_client_info": {
+          "package_name": "com.example.addtilesfragment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4yxWetbiMocHV09zBfNsyccq1u7OCmNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
