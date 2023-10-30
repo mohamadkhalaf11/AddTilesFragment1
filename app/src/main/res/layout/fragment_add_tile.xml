@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/etNameAddTileFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="51dp"
+            android:ems="10"
+            android:hint="Name..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/etSizeAddTileFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Size..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etNameAddTileFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etNameAddTileFragment"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/etPriceAddTileFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:ems="10"
+            android:hint="Price..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etSizeAddTileFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etSizeAddTileFragment"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/etMadeInAddTileFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:ems="10"
+            android:hint="MadeIn..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etPriceAddTileFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etPriceAddTileFragment"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/etCompanyAddTileFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Company..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etMadeInAddTileFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etMadeInAddTileFragment"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/etDesignedInAddTileFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="DesignedIn..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etCompanyAddTileFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etCompanyAddTileFragment"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/etPolishedAddTileFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:ems="10"
+            android:hint="Polished..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etDesignedInAddTileFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etDesignedInAddTileFragment"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnAddAddTileFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="@+id/etPolishedAddTileFragment"
+            app:layout_constraintStart_toStartOf="@+id/etPolishedAddTileFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etPolishedAddTileFragment"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
