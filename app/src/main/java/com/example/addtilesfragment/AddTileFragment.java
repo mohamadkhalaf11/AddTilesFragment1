@@ -4,11 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,8 +21,10 @@ import android.widget.EditText;
 public class AddTileFragment extends Fragment {
 
     private FirebaseServices fbs;
-    private EditText etName, etSize, etPrice, etMadeIn, etCompany, etDesignedIn, etPolished;
+    private EditText etName, etSize, etPrice, etMadeIn, etCompany, etDesignedIn;
     private Button btnAdd;
+    private CheckBox cbPolished;
+    private boolean polished;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -83,8 +88,52 @@ public class AddTileFragment extends Fragment {
         etMadeIn = getView().findViewById(R.id.etMadeInAddTileFragment);
         etCompany = getView().findViewById(R.id.etCompanyAddTileFragment);
         etDesignedIn = getView().findViewById(R.id.etDesignedInAddTileFragment);
-        etPolished = getView().findViewById(R.id.etPolishedAddTileFragment);
         btnAdd = getView().findViewById(R.id.btnAddAddTileFragment);
+        cbPolished = getView().findViewById(R.id.cbPolishedAddFragment);
+        polished = true;
+        cbPolished.setChecked(polished);
+        cbPolished.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cbPolished.isChecked() == true)
+                    polished = true;
+                else
+                    polished = false;
+
+
+            }
+        });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = etName.getText().toString();
+                String size = etSize.getText().toString();
+                String price = etPrice.getText().toString();
+                String madeIn = etMadeIn.getText().toString();
+                String company = etCompany.getText().toString();
+                String designedIn = etDesignedIn.getText().toString();
+
+                if (name.trim().isEmpty() || size.trim().isEmpty() ||
+                        price.trim().isEmpty() || madeIn.trim().isEmpty() || company.trim().isEmpty() || designedIn.trim().isEmpty())
+                {
+                    Toast.makeText(getActivity(), "Some fields are empty!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (!TextUtils.isDigitsOnly(size) || !TextUtils.isDigitsOnly(price))
+                {
+
+                    Toast.makeText(getActivity(), "something went wrong!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                double sized =  Double.parseDouble(size);
+                double priced = Double.parseDouble(price);
+                Tile tile1= new Tile(name , sized , priced , madeIn , company , designedIn , polished)
+
+                 fbs.getFire().collection("tiles")
+
+            }
+        });
 
 
     }

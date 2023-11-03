@@ -89,28 +89,26 @@
             app:layout_constraintTop_toBottomOf="@+id/etCompanyAddTileFragment"
             tools:ignore="MissingConstraints" />
 
-        <EditText
-            android:id="@+id/etPolishedAddTileFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:ems="10"
-            android:hint="Polished..."
-            android:inputType="text"
-            android:minHeight="48dp"
-            app:layout_constraintStart_toStartOf="@+id/etDesignedInAddTileFragment"
-            app:layout_constraintTop_toBottomOf="@+id/etDesignedInAddTileFragment"
-            tools:ignore="MissingConstraints" />
-
         <Button
             android:id="@+id/btnAddAddTileFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="18dp"
             android:text="Add"
-            app:layout_constraintEnd_toEndOf="@+id/etPolishedAddTileFragment"
-            app:layout_constraintStart_toStartOf="@+id/etPolishedAddTileFragment"
-            app:layout_constraintTop_toBottomOf="@+id/etPolishedAddTileFragment"
+            app:layout_constraintStart_toStartOf="@+id/cbPolishedAddFragment"
+            app:layout_constraintTop_toBottomOf="@+id/cbPolishedAddFragment"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cbPolishedAddFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Polished"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDesignedInAddTileFragment"
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
