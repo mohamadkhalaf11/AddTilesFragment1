@@ -2,9 +2,11 @@ package com.example.addtilesfragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -128,9 +134,19 @@ public class AddTileFragment extends Fragment {
                 }
                 double sized =  Double.parseDouble(size);
                 double priced = Double.parseDouble(price);
-                Tile tile1= new Tile(name , sized , priced , madeIn , company , designedIn , polished)
+                Tile tile1= new Tile(name , sized , priced , madeIn , company , designedIn , polished);
 
-                 fbs.getFire().collection("tiles")
+                 fbs.getFire().collection("tiles").add(tile1).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                     @Override
+                     public void onSuccess(DocumentReference documentReference) {
+                         Toast.makeText(getActivity(), "Successfully added!", Toast.LENGTH_SHORT).show();
+                     }
+                 }).addOnFailureListener(new OnFailureListener() {
+                     @Override
+                     public void onFailure(@NonNull Exception e) {
+                         Log.e("Failure AddData : ", e.getMessage());
+                     }
+                 });
 
             }
         });
