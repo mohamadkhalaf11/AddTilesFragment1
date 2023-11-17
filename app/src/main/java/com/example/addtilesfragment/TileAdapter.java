@@ -50,7 +50,7 @@ public class TileAdapter {
 
         ViewHolder(View itemView) {
             super(itemView);
-            tvTittle = itemView.findViewById(R.id.tvTittleProItem);
+            t`vTittle = itemView.findViewById(R.id.tvTittleProItem);
             tvPrice = itemView.findViewById(R.id.tvPriceProItem);
             tvDescription = itemView.findViewById(R.id.tvDescriptionProItem);
             itemView.setOnClickListener(this);
